@@ -1,0 +1,6 @@
+pop(newStack) = newStack
+pop(push(S, I)) = S
+top(newStack) = undefined
+top(push(S, I)) = I
+empty(newStack) = true
+empty(push(S, I)) = false
