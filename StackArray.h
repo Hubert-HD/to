@@ -19,6 +19,16 @@ class StackArray: public Stack<T>{
     T top(); 
     bool isEmpty();
     ~StackArray();
+
+    T* getData(){
+      return data;
+    }
+    int getSize(){
+      return size;
+    }
+    T* getStackPointer(){
+      return stackPointer;
+    }
 };
 
 #endif

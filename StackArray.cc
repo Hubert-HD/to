@@ -2,6 +2,7 @@
 #include <cassert>
 
 template <typename T> StackArray<T>::StackArray(int sz){
+  assert(sz > 0);
   size = sz;
   data = new T[size];
   stackPointer = data;
@@ -40,7 +41,8 @@ template <typename T> T StackArray<T>::top(){
 }
 
 template <typename T> void StackArray<T>::resize(){
-  T* newData = new T[size + RESIZE_FACTOR];
+  size += RESIZE_FACTOR;
+  T* newData = new T[size];
   for (int i = 0; i < size; i++)
     newData[i] = data[i];
   delete data;
